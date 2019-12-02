@@ -8,6 +8,7 @@
   <ItemGroup>
     <Compile Include="Tokenizer.fs" />
     <Compile Include="IntcodeProcessor.fs" />
+    <Compile Include="IntcodeSolver.fs" />
     <None Include="input.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

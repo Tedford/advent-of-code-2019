@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="IncodeSolverSpec.fs" />
     <Compile Include="TokenizerSpec.fs" />
     <Compile Include="IntcodeProcessorSpec.fs" />
   </ItemGroup>

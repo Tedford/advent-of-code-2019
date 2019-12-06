@@ -6,12 +6,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="Models.fs" />
-    <Compile Include="Tokenizer.fs" />
-    <Compile Include="IntcodeProcessor.fs" />
+    <None Include="input2.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="input.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <Compile Include="Models.fs" />
+    <Compile Include="Tokenizer.fs" />
+    <Compile Include="IntcodeProcessor.fs" />
     <None Include="ReadMe.md" />
     <Compile Include="Program.fs" />
   </ItemGroup>

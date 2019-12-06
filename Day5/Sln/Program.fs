@@ -6,9 +6,6 @@ open Day5
 
 [<EntryPoint>]
 let main argv =
-
-    let memory = File.ReadAllText("input.dat").Split(",") |> Seq.map int |> Seq.toArray
-    
-    IntcodeProcessor.compute memory 1 |> snd |> printfn "AC Diagnostic Test: %A"
-    
+    File.ReadAllText("input.dat") |> Tokenizer.ToArray |> IntcodeProcessor.compute 1 |> snd |> printfn "Diagnostic Test 1: %A"
+    File.ReadAllText("input2.dat") |> Tokenizer.ToArray |> IntcodeProcessor.compute 5 |> snd |> printfn "Diagnostic Test 5: %A"
     0 // return an integer exit code

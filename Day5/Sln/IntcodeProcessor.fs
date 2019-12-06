@@ -10,11 +10,15 @@ module IntcodeProcessor =
     | x -> failwithf "Unknown parameter mode %A detected" x
 
     let toOpcode = function
-        | 1 -> Opcodes.Add
-        | 2 -> Opcodes.Multiply
-        | 3 -> Opcodes.Input
-        | 4 -> Opcodes.Output
-        | 99 -> Opcodes.Halt
+        | 1 -> Add
+        | 2 -> Multiply
+        | 3 -> Input
+        | 4 -> Output
+        | 5 -> ``Jump if True``
+        | 6 -> ``Jump if False``
+        | 7 -> ``Less Than``
+        | 8 -> Equals
+        | 99 -> Halt
         | x -> failwithf "Unrecognized opcode %i detected" x
 
     let getParameter (input: int array) ip = function
@@ -22,7 +26,7 @@ module IntcodeProcessor =
         | Immediate -> input.[ip]
         
 
-    let compute (memory: int array) input=
+    let compute input (memory: int array)=
         let mutable ip = 0
         let length = Array.length memory
 
@@ -56,6 +60,26 @@ module IntcodeProcessor =
                 | Output ->
                     output.Add(getValue ip 1 modes)
                     ip + 2
+                | ``Jump if False`` ->
+                    match (getValue ip 1 modes) with
+                    | 0 -> getValue ip 2 modes
+                    | _ -> ip + 3
+                | ``Jump if True`` ->
+                    match (getValue ip 1 modes) with
+                    | 0 -> ip + 3
+                    | _ -> getValue ip 2 modes
+                | ``Less Than`` ->
+                    let x =  getValue ip 1 modes 
+                    let y =  getValue ip 2 modes 
+                    let target = memory.[ip+3]
+                    memory.[target] <- if x < y then 1 else 0
+                    ip + 4
+                | Equals ->
+                    let x =  getValue ip 1 modes 
+                    let y =  getValue ip 2 modes 
+                    let target = memory.[ip+3]
+                    memory.[target] <- if x = y then 1 else 0
+                    ip + 4
                 | Halt ->
                     length
 

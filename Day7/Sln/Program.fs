@@ -11,17 +11,17 @@ let main _ =
 
     let permutations = HeapsAlgorithm.permutations [0;1;2;3;4]
 
-    let (setting, signal) = 
-        permutations
-        |> Seq.map (fun settings -> 
-            let signal = ThrusterAmplifiers.``5 stage`` input settings
-            (settings, signal )
-            )
-        |> Seq.sortByDescending snd
-        |> Seq.head
+    //let (setting, signal) = 
+    //    permutations
+    //    |> Seq.map (fun settings -> 
+    //        let signal = ThrusterAmplifiers.``5 stage`` input settings
+    //        (settings, signal )
+    //        )
+    //    |> Seq.sortByDescending snd
+    //    |> Seq.head
 
 
-    printfn "Highest output is setting %d at setting %A." signal setting
+    //printfn "Highest output is setting %d at setting %A." signal setting
 
     
 

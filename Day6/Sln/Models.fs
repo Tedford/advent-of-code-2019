@@ -6,9 +6,10 @@ type Orbit = {
 }
    
 type Body = {
-    Name: string
+    Name: string;
+    Distance : int
 }
 
-type Tree = Node of string * Tree array
+type Tree = Node of Body * Tree array
 
 

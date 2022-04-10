@@ -6,7 +6,7 @@
 
   <ItemGroup>
     <Compile Include="HeapsAlgorithmSpec.fs" />
-    <Compile Include="IntcodeProcessorSpecs.fs" />
+    <Compile Include="ThrusterAmplifierSpecs.fs" />
   </ItemGroup>
 
   <ItemGroup>

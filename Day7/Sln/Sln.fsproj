@@ -6,6 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="Agent.fs" />
     <Compile Include="HeapsAlgorithm.fs" />
     <Compile Include="Tokenizer.fs" />
     <Compile Include="Models.fs" />

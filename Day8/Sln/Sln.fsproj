@@ -3,18 +3,16 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <RootNamespace>Day6</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="ReadMe.md" />
-    <Compile Include="Models.fs" />
-    <Compile Include="OrbitExplorer.fs" />
-    <Compile Include="Tokenizer.fs" />
-    <None Include="input.dat">
+    <None Include="Readme.md" />
+    <None Include="intput.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <Compile Include="Program.fs" />
   </ItemGroup>
+
+  <ItemGroup />
 
 </Project>
